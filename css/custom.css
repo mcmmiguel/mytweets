@@ -1,16 +1,33 @@
 h1, h2 {
     text-align: center;
 }
+body {
+    background-color: #283040;
+    color: white;
+}
 
 #contenido {
     margin-top: 40px;
 }
+
+
 .borrar-tweet,
 .borrar-tweet:hover {
     float: right;
     cursor: pointer;
     color: red;
     font-weight: bold;
+}
+#tweet {
+    color: #303030;
+}
+li {
+    padding: 0 20px;
+    color: #303030;
+    list-style: none;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
 }
 
 .error {
@@ -22,4 +39,12 @@ h1, h2 {
     max-width: 400px;
     margin: 0 auto;
     color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    font-family: 'Ysabeau', sans-serif;;
+    width: 100%;
 }
