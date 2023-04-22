@@ -20,7 +20,22 @@ function agregarTweet(e) {
         mostrarError('El campo no puede estar vacío');
         return;
     }
-    console.log('Agregando tweet');   
+
+    const tweetObj = {
+        id: Date.now(),
+        tweet,
+    };
+
+    // Añadir al arreglo de tweets
+    tweets = [...tweets, tweetObj];
+    console.log(tweets);
+
+    // Una vez agregado, creamos el HTML
+    crearHTML();
+
+
+    // Reiniciar el formulario
+    formulario.reset();
 };
 
 
@@ -42,3 +57,29 @@ function mostrarError(error) {
     }, 3000);
 
 };
+
+// Crea un listado de los tweets
+function crearHTML() {
+
+    limpiarHTML();
+
+    if (tweets.length > 0) {
+        tweets.forEach(tweet => {
+            // Crear el HTML
+            const li =  document.createElement('li');
+
+            // Agregar el texto
+            li.textContent = tweet.tweet;
+
+            // INsertarlo en el HTML
+            listaTweets.appendChild(li);
+        })
+    }
+};
+
+// Limpiar el HTML
+function limpiarHTML() {
+    while (listaTweets.firstChild) {
+        listaTweets.removeChild(listaTweets.firstChild);
+    }
+}
